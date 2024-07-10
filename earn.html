@@ -1,0 +1,286 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script
+      src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js"
+      defer
+      init
+    ></script>
+    <script type="text/javascript">
+      window.tailwind.config = {
+        darkMode: ["class"],
+        theme: {
+          extend: {
+            colors: {
+              border: "hsl(var(--border))",
+              input: "hsl(var(--input))",
+              ring: "hsl(var(--ring))",
+              background: "hsl(var(--background))",
+              foreground: "hsl(var(--foreground))",
+              primary: {
+                DEFAULT: "hsl(var(--primary))",
+                foreground: "hsl(var(--primary-foreground))",
+              },
+              secondary: {
+                DEFAULT: "hsl(var(--secondary))",
+                foreground: "hsl(var(--secondary-foreground))",
+              },
+              destructive: {
+                DEFAULT: "hsl(var(--destructive))",
+                foreground: "hsl(var(--destructive-foreground))",
+              },
+              muted: {
+                DEFAULT: "hsl(var(--muted))",
+                foreground: "hsl(var(--muted-foreground))",
+              },
+              accent: {
+                DEFAULT: "hsl(var(--accent))",
+                foreground: "hsl(var(--accent-foreground))",
+              },
+              popover: {
+                DEFAULT: "hsl(var(--popover))",
+                foreground: "hsl(var(--popover-foreground))",
+              },
+              card: {
+                DEFAULT: "hsl(var(--card))",
+                foreground: "hsl(var(--card-foreground))",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        :root {
+          --background: 0 0% 100%;
+          --foreground: 240 10% 3.9%;
+          --card: 0 0% 100%;
+          --card-foreground: 240 10% 3.9%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 240 10% 3.9%;
+          --primary: 240 5.9% 10%;
+          --primary-foreground: 0 0% 98%;
+          --secondary: 240 4.8% 95.9%;
+          --secondary-foreground: 240 5.9% 10%;
+          --muted: 240 4.8% 95.9%;
+          --muted-foreground: 240 3.8% 46.1%;
+          --accent: 240 4.8% 95.9%;
+          --accent-foreground: 240 5.9% 10%;
+          --destructive: 0 84.2% 60.2%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 5.9% 90%;
+          --input: 240 5.9% 90%;
+          --ring: 240 5.9% 10%;
+          --radius: 0.5rem;
+        }
+        .dark {
+          --background: 240 10% 3.9%;
+          --foreground: 0 0% 98%;
+          --card: 240 10% 3.9%;
+          --card-foreground: 0 0% 98%;
+          --popover: 240 10% 3.9%;
+          --popover-foreground: 0 0% 98%;
+          --primary: 0 0% 98%;
+          --primary-foreground: 240 5.9% 10%;
+          --secondary: 240 3.7% 15.9%;
+          --secondary-foreground: 0 0% 98%;
+          --muted: 240 3.7% 15.9%;
+          --muted-foreground: 240 5% 64.9%;
+          --accent: 240 3.7% 15.9%;
+          --accent-foreground: 0 0% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 3.7% 15.9%;
+          --input: 240 3.7% 15.9%;
+          --ring: 240 4.9% 83.9%;
+        }
+      }
+
+      @layer components {
+        @keyframes slide-up {
+          from {
+            opacity: 0;
+            transform: translateY(100%);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .slide-up {
+          animation: slide-up 0.5s ease-out;
+        }
+        @keyframes spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        .spinner {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          border: 2px solid transparent;
+          border-radius: 50%;
+          border-top-color: white;
+          animation: spin 1s linear infinite;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="min-h-screen bg-black text-white px-4">
+      <div
+        class="p-4 flex justify-between items-center mb-4 py-[23px] z-30 bg-black relative"
+      >
+        <i class="fa-solid fa-xmark"></i>
+        <span class="text-xl z-30">Cake Cake Cake</span>
+        <div></div>
+      </div>
+      <div class="flex flex-col items-center relative">
+        <div
+          class="bg-[#161612] w-[428px] h-[428px] absolute rounded-full absolute -top-[100px] z-0"
+        ></div>
+        <div
+          class="bg-[#1D1D11] w-[356px] h-[356px] absolute rounded-full mt-[57px] absolute -top-[118px] z-0"
+        ></div>
+        <div
+          class="bg-[#242212] w-[270px] h-[270px] absolute rounded-full mt-[57px] absolute -top-[79px] z-0"
+        ></div>
+        <div
+          class="bg-[#2E2B12] w-[156px] h-[156px] absolute rounded-full mt-[57px] absolute -top-[16px] z-0"
+        ></div>
+        <img
+          src="./assets/bigGem.png"
+          alt="gem icon"
+          class="absolute top-[70px] z-10"
+        />
+        <p class="font-bold py-2 px-4 text-[24px] z-10 absolute top-[180px]">
+          GET MORE GEM
+        </p>
+      </div>
+      <div
+        class="bg-gradient-to-l from-[rgba(0,0,0,0.1)] via-[rgba(39,32,7,0.5)] to-[rgba(0,0,0,0.1)] space-y-4 z-10 relative mt-[260px] slide-up"
+      >
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Youtube</h2>
+          <div
+            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between mb-2"
+          >
+            <div class="flex items-center">
+              <img src="./assets/youtube.png" alt="youtube icon" class="mr-4" />
+              <div>
+                <p>Easy Cake daily news</p>
+                <p class="text-yellow-500">+5.000</p>
+              </div>
+            </div>
+            <img src="./assets/arrow.png" alt="arrow icon" />
+          </div>
+          <div
+            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between mb-2"
+          >
+            <div class="flex items-center">
+              <img src="./assets/youtube.png" alt="youtube icon" class="mr-4" />
+              <div>
+                <p>Easy Cake daily news</p>
+                <p class="text-yellow-500">+5.000</p>
+              </div>
+            </div>
+            <img src="./assets/arrow.png" alt="check icon" />
+          </div>
+          <div
+            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between"
+          >
+            <div class="flex items-center">
+              <img src="./assets/youtube.png" alt="youtube icon" class="mr-4" />
+              <div>
+                <p>Easy Cake daily news</p>
+                <p class="text-yellow-500">+5.000</p>
+              </div>
+            </div>
+            <img src="./assets/arrow.png" alt="arrow icon" />
+          </div>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Daily checkin</h2>
+          <div
+            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between"
+          >
+            <div class="flex items-center">
+              <img src="./assets/task.png" alt="checkin icon" class="mr-4" />
+              <div>
+                <p>Daily tasks list</p>
+                <p class="text-yellow-500">+5.000.000</p>
+              </div>
+            </div>
+            <img src="./assets/arrow.png" alt="arrow icon" />
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex justify-around mt-4 fixed bottom-0 right-0 w-full bg-black h-[54px] items-center"
+      >
+        <a
+          href="./index.html"
+          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+        >
+          <img src="./assets/mine.png" alt="Mine icon" class="" />
+          <span class="text-xs">Mine</span>
+        </a>
+        <a
+          href="./friend.html"
+          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+        >
+          <img src="./assets/friends.png" alt="Friends icon" />
+          <span class="text-xs">Friends</span>
+        </a>
+        <a
+          href="./earn.html"
+          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center bg-[#D9D9D920]"
+        >
+          <img src="./assets/earn-active.png" alt="Earn icon" />
+          <span class="text-xs text-[#FFFF22]">Earn</span>
+        </a>
+        <button
+          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+        >
+          <img src="./assets/upgrade.png" alt="Upgrade icon" />
+          <span class="text-xs">Upgrade</span>
+        </button>
+        <button
+          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+        >
+          <img src="./assets/airdrop.png" alt="Airdrop icon" />
+          <span class="text-xs">Airdrop</span>
+        </button>
+      </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const arrows = document.querySelectorAll('.arrow');
+            arrows.forEach(arrow => {
+                arrow.addEventListener('click', function () {
+                    const originalSrc = arrow.src;
+                    arrow.src = './assets/spinner.gif'; // Set loading spinner
+                    setTimeout(() => {
+                        arrow.src = './assets/checkmark.png'; // Set checkmark icon
+                    }, 500); // 0.5s delay
+                });
+            });
+        });
+    </script>
+  </body>
+</html>

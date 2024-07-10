@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <style>
+    /* CSS đã cập nhật */
+    @keyframes shake {
+      0%, 100% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-5px);
+      }
+
+      75% {
+        transform: translateX(5px);
+      }
+    }
+
+    .shake {
+      animation: shake 0.5s;
+    }
+
+    /* New style for divider line */
+    .friend-item {
+        width: 90%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      margin: 0 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Divider line */
+    }
+
+    .friend-item:last-child {
+      border-bottom: none; /* Remove divider line for the last item */
+    }
+
+    /* CSS cập nhật cho hiệu ứng xuất hiện */
+    .invite-friends {
+      opacity: 0;
+      animation: slideLeft 0.5s ease forwards;
+    }
+
+    @keyframes slideLeft {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .friend-list {
+      opacity: 0;
+      animation: slideUp 0.5s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white">
+  <div class="mx-4">
+    <div class="relative">
+      <div class="p-4 flex justify-between items-center mb-4 py-[23px]">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="text-xl">Cake Cake Cake</span>
+        <div></div>
+      </div>
+      <div class="bg-gradient-to-l from-[rgb(0,0,0)] via-[rgba(17,25,47,1)] to-[rgb(0,0,0)] min-h-[calc(100vh-90px)] rounded-[24px] p-4">
+        <div class="text-center">
+          <h2 class="text-xl font-bold invite-friends">INVITE FRIENDS!</h2>
+          <p class="text-sm text-muted-foreground invite-friends">
+            You and your friend will both receive rewards
+          </p>
+        </div>
+        <div class="mt-6 space-y-4">
+          <div class="bg-[#D9D9D920] rounded-[18px] px-8 py-4 invite-friends">
+            <p class="font-semibold">Invite friends</p>
+            <div class="flex items-center mt-2">
+              <img
+                src="./assets/gem.png"
+                alt="gem icon"
+                class="w-[22.22px] h-[22px]"
+              />
+              <p class="text-[#FFFF22] font-bold px-1">
+                +5.000
+                <span class="text-[#D9D9D9] font-normal"
+                  >for you and your friend</span
+                >
+              </p>
+            </div>
+          </div>
+          <div class="bg-[#D9D9D920] rounded-[18px] px-8 py-4 invite-friends">
+            <p class="font-semibold">
+              Invite your friends with Premium Telegram
+            </p>
+            <div class="flex items-center mt-2">
+              <img
+                src="./assets/gem.png"
+                alt="gem icon"
+                class="w-[22.22px] h-[22px]"
+              />
+              <p class="text-[#FFFF22] font-bold px-1">
+                +25.000
+                <span class="text-[#D9D9D9] font-normal"
+                  >for you and your friend</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4 friend-list">
+          <a href="#" class="text-blue-500 font-bold underline">Get more rewards</a>
+        </div>
+        <div class="mt-6 friend-list">
+          <div class="flex justify-between items-center">
+            <p id="friends-count" class="font-semibold">Friends list (0)</p>
+            <img
+              id="reload"
+              src="./assets/reload.png"
+              alt="reload icon"
+              class="cursor-pointer"
+            />
+          </div>
+          <div
+            id="friends-list"
+            class="bg-[#D9D9D920] rounded-[18px] min-h-[80px] mt-3 friend-list flex flex-col justify-center items-center"
+          >
+            <p class="text-center font-bold text-[#616161]">
+              You haven't invited anyone yet
+            </p>
+          </div>
+        </div>
+        <div
+          class="fixed bottom-12 left-0 right-0 p-4 flex justify-around items-center gap-2"
+        >
+          <button
+            class="bg-[#36C3FF] text-black py-[18px] w-full rounded-[18px] flex items-center justify-center text-[14px] gap-2"
+          >
+            <span>Invite friends</span>
+            <img
+              src="./assets/invite.png"
+              alt="invite icon"
+            />
+          </button>
+          <button
+            class="bg-[#36C3FF] text-black p-[18px] rounded-[18px] flex items-center justify-center text-[14px]"
+          >
+            <img
+              src="./assets/copy.png"
+              alt="clipboard icon"
+            />
+          </button>
+        </div>
+        <div
+          class="flex justify-around mt-4 fixed bottom-0 right-0 w-full bg-black h-[54px] items-center"
+        >
+          <a
+            href="./index.html"
+            class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+          >
+            <img src="./assets/mine.png" alt="Mine icon" class="" />
+            <span class="text-xs">Mine</span>
+          </a>
+          <a
+            href="./friend.html"
+            class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center bg-[#D9D9D920]"
+          >
+            <img src="./assets/friend-active.png" alt="Friends icon" />
+            <span class="text-xs text-[#FFFF22]">Friends</span>
+          </a>
+          <a
+            href="./earn.html"
+            class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+          >
+            <img src="./assets/earn.png" alt="Earn icon" />
+            <span class="text-xs">Earn</span>
+          </a>
+          <button
+            class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+          >
+            <img src="./assets/upgrade.png" alt="Upgrade icon" />
+            <span class="text-xs">Upgrade</span>
+          </button>
+          <button
+            class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+          >
+            <img src="./assets/airdrop.png" alt="Airdrop icon" />
+            <span class="text-xs">Airdrop</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const reloadIcon = document.getElementById("reload");
+      const friendsList = document.getElementById("friends-list");
+      const friendsCount = document.getElementById("friends-count");
+
+      const updateFriendsCount = () => {
+        const numberOfFriends = friendsList.children.length;
+        friendsCount.textContent = `Friends list (${numberOfFriends})`;
+      };
+
+      reloadIcon.addEventListener("click", function () {
+        reloadIcon.classList.add("shake");
+
+        setTimeout(() => {
+          reloadIcon.classList.remove("shake");
+
+          friendsList.innerHTML = "";
+
+          const friendsData = [
+            {
+              avatar: "./assets/avatar1.png",
+              name: "Angella Bell",
+              gem: "./assets/gem.png",
+            },
+            {
+              avatar: "./assets/avatar2.png",
+              name: "Deluxe66",
+              gem: "./assets/gem.png",
+            },
+            {
+              avatar: "./assets/avatar3.png",
+              name: "Anglabell",
+              gem: "./assets/gem.png",
+            },
+          ];
+
+          friendsData.forEach((friend, index) => {
+            const friendItem = document.createElement("div");
+            friendItem.classList.add("friend-item");
+            friendItem.innerHTML = `
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-white"></div>
+                <span>${friend.name}</span>
+              </div>
+              <div class="flex items-center">
+                <img src="${friend.gem}" alt="gem icon" class="w-[22.22px] h-[22px]">
+                <p class="text-[#FFFF22] font-bold px-1">+5.000</p>
+              </div>
+            `;
+            friendsList.appendChild(friendItem);
+
+            if (index < friendsData.length - 1) {
+              const divider = document.createElement("div");
+              friendsList.appendChild(divider);
+            }
+          });
+
+          updateFriendsCount();
+        }, 500);
+      });
+
+      // Hiệu ứng xuất hiện khi tải trang
+      const inviteFriendsSection = document.querySelector(".invite-friends");
+      const friendListSection = document.querySelector(".friend-list");
+
+      inviteFriendsSection.classList.add("slideLeft");
+      friendListSection.classList.add("slideUp");
+    });
+  </script>
+</body>
+</html>
