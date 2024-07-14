@@ -11,77 +11,10 @@
     referrerpolicy="no-referrer"
   />
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-  <style>
-    /* CSS đã cập nhật */
-    @keyframes shake {
-      0%, 100% {
-        transform: translateX(0);
-      }
-
-      25% {
-        transform: translateX(-5px);
-      }
-
-      75% {
-        transform: translateX(5px);
-      }
-    }
-
-    .shake {
-      animation: shake 0.5s;
-    }
-
-    /* New style for divider line */
-    .friend-item {
-        width: 90%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      margin: 0 24px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Divider line */
-    }
-
-    .friend-item:last-child {
-      border-bottom: none; /* Remove divider line for the last item */
-    }
-
-    /* CSS cập nhật cho hiệu ứng xuất hiện */
-    .invite-friends {
-      opacity: 0;
-      animation: slideLeft 0.5s ease forwards;
-    }
-
-    @keyframes slideLeft {
-      from {
-        opacity: 0;
-        transform: translateX(100%);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    .friend-list {
-      opacity: 0;
-      animation: slideUp 0.5s ease forwards;
-    }
-
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(100%);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-black text-white">
+<body class="bg-black text-white overflow-hidden">
   <div class="mx-4">
     <div class="relative">
       <div class="p-4 flex justify-between items-center mb-4 py-[23px]">
@@ -199,91 +132,22 @@
             <img src="./assets/earn.png" alt="Earn icon" />
             <span class="text-xs">Earn</span>
           </a>
-          <button
+          <a href="./upgrade.html"
             class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
           >
             <img src="./assets/upgrade.png" alt="Upgrade icon" />
             <span class="text-xs">Upgrade</span>
-          </button>
-          <button
+          </a>
+          <a href="./airdrop.html"
             class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
           >
             <img src="./assets/airdrop.png" alt="Airdrop icon" />
             <span class="text-xs">Airdrop</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const reloadIcon = document.getElementById("reload");
-      const friendsList = document.getElementById("friends-list");
-      const friendsCount = document.getElementById("friends-count");
-
-      const updateFriendsCount = () => {
-        const numberOfFriends = friendsList.children.length;
-        friendsCount.textContent = `Friends list (${numberOfFriends})`;
-      };
-
-      reloadIcon.addEventListener("click", function () {
-        reloadIcon.classList.add("shake");
-
-        setTimeout(() => {
-          reloadIcon.classList.remove("shake");
-
-          friendsList.innerHTML = "";
-
-          const friendsData = [
-            {
-              avatar: "./assets/avatar1.png",
-              name: "Angella Bell",
-              gem: "./assets/gem.png",
-            },
-            {
-              avatar: "./assets/avatar2.png",
-              name: "Deluxe66",
-              gem: "./assets/gem.png",
-            },
-            {
-              avatar: "./assets/avatar3.png",
-              name: "Anglabell",
-              gem: "./assets/gem.png",
-            },
-          ];
-
-          friendsData.forEach((friend, index) => {
-            const friendItem = document.createElement("div");
-            friendItem.classList.add("friend-item");
-            friendItem.innerHTML = `
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-white"></div>
-                <span>${friend.name}</span>
-              </div>
-              <div class="flex items-center">
-                <img src="${friend.gem}" alt="gem icon" class="w-[22.22px] h-[22px]">
-                <p class="text-[#FFFF22] font-bold px-1">+5.000</p>
-              </div>
-            `;
-            friendsList.appendChild(friendItem);
-
-            if (index < friendsData.length - 1) {
-              const divider = document.createElement("div");
-              friendsList.appendChild(divider);
-            }
-          });
-
-          updateFriendsCount();
-        }, 500);
-      });
-
-      // Hiệu ứng xuất hiện khi tải trang
-      const inviteFriendsSection = document.querySelector(".invite-friends");
-      const friendListSection = document.querySelector(".friend-list");
-
-      inviteFriendsSection.classList.add("slideLeft");
-      friendListSection.classList.add("slideUp");
-    });
-  </script>
+  <script src="./friend.js"></script>
 </body>
 </html>
