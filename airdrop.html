@@ -54,6 +54,7 @@
           <h2 class="text-lg font-semibold mb-2">Task list</h2>
           <div
             class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between mb-2"
+            onclick="toggleModal('mainModal')"
           >
             <div class="flex items-center">
               <img src="./assets/x.png" alt="youtube icon" class="mr-4" />
@@ -157,20 +158,58 @@
         </a>
       </div>
     </div>
+    <div
+      id="mainModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-30 text-white hidden"
+    >
+      <div
+        class="h-max-content relative z-30 pt-20 w-full slide-up"
+        id="slide-up"
+      >
+        <div
+          class="bg-gradient-to-b from-[rgba(218,0,1,0)] via-[rgba(218,0,1,0.6)] to-[rgba(218,0,1,0)] shadow-lg h-64 w-full absolute top-0 z-10 pointer-events-none"
+        ></div>
+        <div
+          class="bg-[rgba(218,0,1,0.6)] w-full h-20 absolute top-[78px] rounded-[30px] z-20"
+        ></div>
+        <div
+          class="bg-black rounded-t-[30px] shadow-lg p-6 w-full z-40 relative"
+        >
+          <button
+            class="absolute top-3 right-3 w-9 h-9 rounded-full bg-[rgba(217,217,217,0.1)] text-[#727272]"
+            onclick="toggleModal('mainModal')"
+          >
+            <i class="fa-solid fa-x"></i>
+          </button>
+          <div class="text-center mb-6">
+            <img
+              src="./assets/x.png"
+              alt="Gem Icon"
+              class="mx-auto mb-4 w-[68px] h-[68px]"
+            />
+          </div>
+          <div class="text-center mb-4">
+            <h3 class="text-lg font-semibold mb-7">Follow X channel</h3>
+            <p class="text-muted-foreground mb-4">
+              <button
+              class="bg-[#36C3FF] text-black font-bold px-8 py-2 rounded-xl"
+            >
+              Follow X
+            </button>
+            <div class="flex justify-center items-center m-5 gap-2">
+              <img src="./assets/gem.png" alt="" class="w-[31.11px] h-7" />
+              <p class="text-[#FFFF22] font-bold">+5.000</p>
+            </div>
+            <button
+              class="bg-[#36C3FF] text-black font-bold w-[80%] px-4 py-2 rounded-lg"
+            >
+              Check
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const arrows = document.querySelectorAll(".arrow");
-        arrows.forEach((arrow) => {
-          arrow.addEventListener("click", function () {
-            const originalSrc = arrow.src;
-            arrow.src = "./assets/spinner.gif"; // Set loading spinner
-            setTimeout(() => {
-              arrow.src = "./assets/checkmark.png"; // Set checkmark icon
-            }, 500); // 0.5s delay
-          });
-        });
-      });
-    </script>
+    <script src="./upgrade.js"></script>
   </body>
 </html>

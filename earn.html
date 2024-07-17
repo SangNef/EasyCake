@@ -19,7 +19,9 @@
   </head>
 
   <body class="overflow-hidden">
-    <div class="min-h-screen bg-gradient-to-l from-[rgba(0,0,0,1)] via-[#272007] to-[rgba(0,0,0,1)] text-white px-4">
+    <div
+      class="min-h-screen bg-gradient-to-l from-[rgba(0,0,0,1)] via-[#272007] to-[rgba(0,0,0,1)] text-white px-4"
+    >
       <div class="flex flex-col items-center relative">
         <div
           class="bg-[#161612] w-[428px] h-[428px] absolute rounded-full absolute -top-[100px] z-0"
@@ -42,13 +44,12 @@
           GET MORE GEM
         </p>
       </div>
-      <div
-        class=" space-y-4 z-10 relative mt-[260px] slide-up"
-      >
+      <div class="space-y-4 z-10 relative mt-[260px] slide-up">
         <div>
           <h2 class="text-lg font-semibold mb-2">Youtube</h2>
           <div
             class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between mb-2"
+            onclick="toggleModal('mainModal')"
           >
             <div class="flex items-center">
               <img src="./assets/youtube.png" alt="youtube icon" class="mr-4" />
@@ -61,6 +62,7 @@
           </div>
           <div
             class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between mb-2"
+            onclick="toggleModal('mainModal')"
           >
             <div class="flex items-center">
               <img src="./assets/youtube.png" alt="youtube icon" class="mr-4" />
@@ -73,6 +75,7 @@
           </div>
           <div
             class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between"
+            onclick="toggleModal('mainModal')"
           >
             <div class="flex items-center">
               <img src="./assets/youtube.png" alt="youtube icon" class="mr-4" />
@@ -88,6 +91,7 @@
           <h2 class="text-lg font-semibold mb-2">Daily checkin</h2>
           <div
             class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between"
+            onclick="toggleModal('checkinModal')"
           >
             <div class="flex items-center">
               <img src="./assets/task.png" alt="checkin icon" class="mr-4" />
@@ -131,7 +135,8 @@
           <img src="./assets/upgrade.png" alt="Upgrade icon" />
           <span class="text-xs">Upgrade</span>
         </a>
-       <a href="./airdrop.html"
+        <a
+          href="./airdrop.html"
           class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
         >
           <img src="./assets/airdrop.png" alt="Airdrop icon" />
@@ -139,20 +144,268 @@
         </a>
       </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const arrows = document.querySelectorAll(".arrow");
-        arrows.forEach((arrow) => {
-          arrow.addEventListener("click", function () {
-            const originalSrc = arrow.src;
-            arrow.src = "./assets/spinner.gif"; // Set loading spinner
-            setTimeout(() => {
-              arrow.src = "./assets/checkmark.png"; // Set checkmark icon
-            }, 500); // 0.5s delay
-          });
-        });
-      });
-    </script>
+    <div
+      id="mainModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-30 text-white hidden"
+    >
+      <div
+        class="h-max-content relative z-30 pt-20 w-full slide-up"
+        id="slide-up"
+      >
+        <div
+          class="bg-gradient-to-b from-[rgba(218,0,1,0)] via-[rgba(218,0,1,0.6)] to-[rgba(218,0,1,0)] shadow-lg h-64 w-full absolute top-0 z-10 pointer-events-none"
+        ></div>
+        <div
+          class="bg-[rgba(218,0,1,0.6)] w-full h-20 absolute top-[78px] rounded-[30px] z-20"
+        ></div>
+        <div
+          class="bg-black rounded-t-[30px] shadow-lg p-6 w-full z-40 relative"
+        >
+          <button
+            class="absolute top-3 right-3 w-9 h-9 rounded-full bg-[rgba(217,217,217,0.1)] text-[#727272]"
+            onclick="toggleModal('mainModal')"
+          >
+            <i class="fa-solid fa-x"></i>
+          </button>
+          <div class="text-center mb-6">
+            <img
+              src="./assets/image 8.png"
+              alt="Gem Icon"
+              class="mx-auto mb-4"
+            />
+          </div>
+          <div class="text-center mb-4">
+            <h3 class="text-lg font-semibold">Title task 1</h3>
+            <p class="text-muted-foreground mb-4">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s
+            </p>
+            <button
+              class="bg-[#36C3FF] text-black font-bold px-4 py-2 rounded-lg"
+            >
+              Xem video
+            </button>
+            <div class="flex justify-center items-center m-5 gap-2">
+              <img src="./assets/gem.png" alt="" class="w-[31.11px] h-7" />
+              <p class="text-[#FFFF22] font-bold">+100.000</p>
+            </div>
+            <button
+              class="bg-[#36C3FF] text-black font-bold w-[80%] px-4 py-2 rounded-lg"
+            >
+              Check
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="checkinModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-30 text-white"
+    >
+      <div
+        class="h-max-content relative z-30 pt-20 w-full slide-up"
+        id="slide-up"
+      >
+        <div
+          class="bg-gradient-to-b from-[rgba(218,0,1,0)] via-[rgba(218,0,1,0.6)] to-[rgba(218,0,1,0)] shadow-lg h-64 w-full absolute top-0 z-10 pointer-events-none"
+        ></div>
+        <div
+          class="bg-[rgba(218,0,1,0.6)] w-full h-20 absolute top-[78px] rounded-[30px] z-20"
+        ></div>
+        <div
+          class="bg-black rounded-t-[30px] shadow-lg p-6 w-full z-40 relative"
+        >
+          <button
+            class="absolute top-3 right-3 w-9 h-9 rounded-full bg-[rgba(217,217,217,0.1)] text-[#727272]"
+            onclick="toggleModal('checkinModal')"
+          >
+            <i class="fa-solid fa-x"></i>
+          </button>
+          <div class="text-center mb-6">
+            <img
+              src="./assets/image 9 (1).png"
+              alt="Gem Icon"
+              class="mx-auto mb-4"
+            />
+          </div>
+          <div class="text-center mb-4">
+            <h3 class="text-lg font-semibold">Daily Check-in</h3>
+            <p class="text-muted-foreground mb-4">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+            <div class="grid grid-cols-3 gap-2">
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(54,195,255,0.5)] text-white rounded-[18px]"
+              >
+                <span>Day 1</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground border border-yellow-500 rounded-[18px]"
+              >
+                <span>Day 2</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 3</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 4</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 5</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 6</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 4</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 5</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 6</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 4</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 5</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 6</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 4</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 5</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 6</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 4</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 5</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 6</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+            </div>
+            <button class="absolute w-[80%] right-[10%] bottom-5 p-2 bg-blue-500 text-white rounded-lg">
+              Check in
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./earn.js"></script>
   </body>
 </html>
