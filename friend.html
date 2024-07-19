@@ -15,59 +15,29 @@
 </head>
 
 <body class="bg-black text-white overflow-hidden">
-  <div class="mx-4">
+  <div class="min-h-screen">
     <div class="relative">
-      <div class="p-4 flex justify-between items-center mb-4 py-[23px]">
-        <i class="fa-solid fa-xmark"></i>
-        <span class="text-xl">Cake Cake Cake</span>
-        <div></div>
-      </div>
       <div class="bg-gradient-to-l from-[rgb(0,0,0)] via-[rgba(17,25,47,1)] to-[rgb(0,0,0)] min-h-[calc(100vh-90px)] rounded-[24px] p-4">
-        <div class="text-center">
-          <h2 class="text-xl font-bold invite-friends">INVITE FRIENDS!</h2>
-          <p class="text-sm text-muted-foreground invite-friends">
-            You and your friend will both receive rewards
-          </p>
-        </div>
-        <div class="mt-6 space-y-4">
-          <div class="bg-[#D9D9D920] rounded-[18px] px-8 py-4 invite-friends">
-            <p class="font-semibold">Invite friends</p>
-            <div class="flex items-center mt-2">
-              <img
-                src="./assets/gem.png"
-                alt="gem icon"
-                class="w-[22.22px] h-[22px]"
-              />
-              <p class="text-[#FFFF22] font-bold px-1">
-                +5.000
-                <span class="text-[#D9D9D9] font-normal"
-                  >for you and your friend</span
-                >
-              </p>
-            </div>
-          </div>
-          <div class="bg-[#D9D9D920] rounded-[18px] px-8 py-4 invite-friends">
-            <p class="font-semibold">
-              Invite your friends with Premium Telegram
-            </p>
-            <div class="flex items-center mt-2">
-              <img
-                src="./assets/gem.png"
-                alt="gem icon"
-                class="w-[22.22px] h-[22px]"
-              />
-              <p class="text-[#FFFF22] font-bold px-1">
-                +25.000
-                <span class="text-[#D9D9D9] font-normal"
-                  >for you and your friend</span
-                >
-              </p>
-            </div>
+        <h3 class="font-bold text-[24px] text-center">INVITE FRIENDS!</h3>
+      <p class="text-[14px] text-center">
+        You and your friend will both receive rewards
+      </p>
+      <div class="flex flex-col mt-7">
+        <div class="w-full px-6 py-4 bg-[rgba(217,217,217,0.1)] rounded-[18px] slide-up">
+          <h3 class="font-bold">Invite friends</h3>
+          <div class="flex items-center gap-1">
+            <img src="./assets/gem.png" alt="gem" class="w-[22.22px] h-5">
+            <p class="text-[#D9D9D9] text-[14px]"><span class="font-bold text-[#FFFF22] text-[16px]">+5.000</span> for you and your friend</p>
           </div>
         </div>
-        <div class="text-center mt-4 friend-list">
-          <a href="#" class="text-blue-500 font-bold underline">Get more rewards</a>
+        <div class="w-full px-6 py-4 bg-[rgba(217,217,217,0.1)] rounded-[18px] mt-1 slide-up">
+          <h3 class="font-bold">Invite friends</h3>
+          <div class="flex items-center gap-1">
+            <img src="./assets/gem.png" alt="gem" class="w-[22.22px] h-5">
+            <p class="text-[#D9D9D9] text-[14px]"><span class="font-bold text-[#FFFF22] text-[16px]">+5.000</span> for you and your friend</p>
+          </div>
         </div>
+        <a href="#" class="text-[#36C3FF] text-center font-bold text-[16px] underline mt-5 slide-up">Get more rewards</a>
         <div class="mt-6 friend-list">
           <div class="flex justify-between items-center">
             <p id="friends-count" class="font-semibold">Friends list (0)</p>

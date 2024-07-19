@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const energyElement = document.getElementById("energy");
   const levelElement = document.getElementById("level");
   const cake = document.getElementById("cake");
+  const cakeImage = document.querySelector(".cake-image");
 
   cake.addEventListener("click", function (e) {
     // Floating number animation
@@ -20,22 +21,25 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(number);
     setTimeout(function () {
       number.remove();
-    }, 1000); // Thời gian chờ để loại bỏ số "1" khỏi DOM sau khi hoạt ảnh kết thúc
+    }, 1000); // Time to remove the number from the DOM after animation ends
+
+    // Cake image tilt effect
+    cakeImage.classList.add("tilt");
+
+    // Reset the tilt effect after animation
+    setTimeout(() => {
+      cakeImage.classList.remove("tilt");
+    }, 300); // Match the duration of the CSS transition
 
     // Update UI
     if (energy >= 1) {
-      this.classList.add("shrink");
-      setTimeout(() => {
-        this.classList.remove("shrink");
-      }, 300); // Thời gian chờ để loại bỏ hiệu ứng thu nhỏ sau khi hoạt ảnh kết thúc
-
       totalGems++;
       energy -= 1;
 
       if (totalGems >= gemsToLevelUp) {
         if (level < maxLevel) {
           level++;
-          totalGems = 0; // Đặt lại điểm
+          totalGems = 0; // Reset gems
         }
       }
 

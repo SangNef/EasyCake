@@ -51,6 +51,8 @@
     color: #fee001;
     z-index: 999;
     animation: float-up 1s ease-out forwards;
+    pointer-events: none;
+    font-size: 24px;
 }
 
 @keyframes float-up {
@@ -106,13 +108,13 @@
 /* CSS cập nhật cho hiệu ứng xuất hiện */
 .invite-friends {
     opacity: 0;
-    animation: slideLeft 0.5s ease forwards;
+    animation: slideLeft 0.3s ease forwards;
 }
 
 @keyframes slideLeft {
     from {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(50%);
     }
 
     to {
@@ -123,17 +125,17 @@
 
 .friend-list {
     opacity: 0;
-    animation: slideUp 0.5s ease forwards;
+    animation: slideUp 0.3s ease forwards;
 }
 
 .slide-up {
-    animation: slideUp 0.5s ease forwards;
+    animation: slideUp 0.3s ease forwards;
 }
 
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(100%);
+        transform: translateY(50%);
     }
 
     to {
@@ -141,3 +143,11 @@
         transform: translateY(0);
     }
 }
+
+.cake-image {
+    transition: transform 0.3s ease; /* Smooth transition for the tilt effect */
+  }
+  
+  .cake-image.tilt {
+    transform: rotate(-5deg); /* Adjust the angle as needed */
+  }

@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const updateFriendsCount = () => {
     const numberOfFriends = friendsList.children.length;
-    friendsCount.textContent = `Friends list (${numberOfFriends})`;
+    friendsCount.textContent = `Friends list (3)`;
+    console.log(numberOfFriends)
   };
 
   reloadIcon.addEventListener("click", function () {

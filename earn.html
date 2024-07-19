@@ -18,22 +18,22 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
 
-  <body class="overflow-hidden">
+  <body class="">
     <div
-      class="min-h-screen bg-gradient-to-l from-[rgba(0,0,0,1)] via-[#272007] to-[rgba(0,0,0,1)] text-white px-4"
+      class="min-h-screen bg-gradient-to-l from-[rgba(0,0,0,1)] via-[#272007] to-[rgba(0,0,0,1)] text-white px-4 overflow-hidden"
     >
       <div class="flex flex-col items-center relative">
         <div
-          class="bg-[#161612] w-[428px] h-[428px] absolute rounded-full absolute -top-[100px] z-0"
+          class="bg-[rgba(255,255,34,0.02)] w-[428px] h-[428px] absolute rounded-full absolute -top-[100px] z-0"
         ></div>
         <div
-          class="bg-[#1D1D11] w-[356px] h-[356px] absolute rounded-full mt-[57px] absolute -top-[118px] z-0"
+          class="bg-[rgba(255,255,34,0.02)] w-[356px] h-[356px] absolute rounded-full mt-[57px] absolute -top-[118px] z-0"
         ></div>
         <div
-          class="bg-[#242212] w-[270px] h-[270px] absolute rounded-full mt-[57px] absolute -top-[79px] z-0"
+          class="bg-[rgba(255,255,34,0.02)] w-[270px] h-[270px] absolute rounded-full mt-[57px] absolute -top-[79px] z-0"
         ></div>
         <div
-          class="bg-[#2E2B12] w-[156px] h-[156px] absolute rounded-full mt-[57px] absolute -top-[16px] z-0"
+          class="bg-[rgba(255,255,34,0.02)] w-[156px] h-[156px] absolute rounded-full mt-[57px] absolute -top-[16px] z-0"
         ></div>
         <img
           src="./assets/bigGem.png"
@@ -44,60 +44,73 @@
           GET MORE GEM
         </p>
       </div>
-      <div class="space-y-4 z-10 relative mt-[260px] slide-up">
-        <div>
+      <div class="space-y-4 z-10 relative mt-[260px]">
+        <div class=" slide-up">
           <h2 class="text-lg font-semibold mb-2">Youtube</h2>
           <div
-            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between mb-2"
+            class="bg-[rgba(217,217,217,0.1)] px-4 py-3 rounded-[18px] flex items-center justify-between mb-1"
             onclick="toggleModal('mainModal')"
           >
             <div class="flex items-center">
               <img src="./assets/youtube.png" alt="youtube icon" class="mr-4" />
               <div>
-                <p>Easy Cake daily news</p>
-                <p class="text-yellow-500">+5.000</p>
+                <p class="font-bold text-[14px]">Easy Cake daily news</p>
+                <div class="flex gap-1 items-center">
+                  <img src="./assets/gem.png" class="w-[22.22px] h-5" alt="">
+                  <p class="text-[16px] font-bold text-[#FFFF22]">+5.000</p>
+                </div>
               </div>
             </div>
             <img src="./assets/arrow.png" alt="arrow icon" />
           </div>
           <div
-            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between mb-2"
+            class="bg-[rgba(217,217,217,0.1)] px-4 py-3 rounded-[18px] flex items-center justify-between mb-1"
             onclick="toggleModal('mainModal')"
           >
             <div class="flex items-center">
               <img src="./assets/youtube.png" alt="youtube icon" class="mr-4" />
               <div>
-                <p>Easy Cake daily news</p>
-                <p class="text-yellow-500">+5.000</p>
-              </div>
-            </div>
-            <img src="./assets/arrow.png" alt="check icon" />
-          </div>
-          <div
-            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between"
-            onclick="toggleModal('mainModal')"
-          >
-            <div class="flex items-center">
-              <img src="./assets/youtube.png" alt="youtube icon" class="mr-4" />
-              <div>
-                <p>Easy Cake daily news</p>
-                <p class="text-yellow-500">+5.000</p>
+                <p class="font-bold text-[14px]">Easy Cake daily news</p>
+                <div class="flex gap-1 items-center">
+                  <img src="./assets/gem.png" class="w-[22.22px] h-5" alt="">
+                  <p class="text-[16px] font-bold text-[#FFFF22]">+5.000</p>
+                </div>
               </div>
             </div>
             <img src="./assets/arrow.png" alt="arrow icon" />
           </div>
+          <div
+            class="bg-[rgba(217,217,217,0.1)] px-4 py-3 rounded-[18px] flex items-center justify-between mb-2"
+            onclick="toggleModal('mainModal')"
+          >
+            <div class="flex items-center">
+              <img src="./assets/youtube.png" alt="youtube icon" class="mr-4" />
+              <div>
+                <p class="font-bold text-[14px]">Easy Cake daily news</p>
+                <div class="flex gap-1 items-center">
+                  <img src="./assets/gem.png" class="w-[22.22px] h-5" alt="">
+                  <p class="text-[16px] font-bold text-[#FFFF22]">+5.000</p>
+                </div>
+              </div>
+            </div>
+            <img src="./assets/arrow.png" alt="arrow icon" />
+          </div>
+          
         </div>
-        <div>
+        <div class=" slide-up">
           <h2 class="text-lg font-semibold mb-2">Daily checkin</h2>
           <div
-            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between"
+            class="bg-[rgba(217,217,217,0.1)] px-4 py-3 rounded-[18px] flex items-center justify-between"
             onclick="toggleModal('checkinModal')"
           >
             <div class="flex items-center">
               <img src="./assets/task.png" alt="checkin icon" class="mr-4" />
               <div>
-                <p>Daily tasks list</p>
-                <p class="text-yellow-500">+5.000.000</p>
+                <p class="font-bold">Daily tasks list</p>
+                <div class="flex gap-1 items-center">
+                  <img src="./assets/gem.png" class="w-[22.22px] h-5" alt="">
+                  <p class="text-[16px] font-bold text-[#FFFF22]">+5.000</p>
+                </div>
               </div>
             </div>
             <img src="./assets/arrow.png" alt="arrow icon" />
@@ -175,14 +188,14 @@
             />
           </div>
           <div class="text-center mb-4">
-            <h3 class="text-lg font-semibold">Title task 1</h3>
-            <p class="text-muted-foreground mb-4">
+            <h3 class="text-[24px] mb-5 text-[#D9D9D9]">Title task 1</h3>
+            <p class="text-muted-foreground mb-8">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s
             </p>
             <button
-              class="bg-[#36C3FF] text-black font-bold px-4 py-2 rounded-lg"
+              class="bg-[#36C3FF] text-[#0D0D0D] text-[14px] font-bold px-6 py-4 rounded-[18px]"
             >
               Xem video
             </button>
@@ -191,7 +204,7 @@
               <p class="text-[#FFFF22] font-bold">+100.000</p>
             </div>
             <button
-              class="bg-[#36C3FF] text-black font-bold w-[80%] px-4 py-2 rounded-lg"
+              class="bg-[#36C3FF] text-black font-bold w-[80%] px-4 py-4 rounded-[18px]"
             >
               Check
             </button>
@@ -201,7 +214,7 @@
     </div>
     <div
       id="checkinModal"
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-30 text-white"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-30 text-white hidden"
     >
       <div
         class="h-max-content relative z-30 pt-20 w-full slide-up"
@@ -399,7 +412,7 @@
                 </div>
               </div>
             </div>
-            <button class="absolute w-[80%] right-[10%] bottom-5 p-2 bg-blue-500 text-white rounded-lg">
+            <button class="absolute w-[80%] right-[10%] bottom-5 p-5 bg-[#36C3FF] text-[#0D0D0D] font-bold rounded-[18px]">
               Check in
             </button>
           </div>

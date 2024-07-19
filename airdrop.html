@@ -1,165 +1,87 @@
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <script
-      src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js"
-      defer
-      init
-    ></script>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-
-  <body>
-    <div
-      class="min-h-screen bg-gradient-to-l from-[rgba(0,0,0,1)] via-[#072727] to-[rgba(0,0,0,1)] text-white px-4 relative"
-    >
-      <button
-        class="absolute top-0 bg-[rgba(217,217,217,0.3)] z-10 max-w-[116px] px-5 py-1 text-[14px] rounded-[10px] top-3 right-5"
-      >
-        Connect TON wallet
-      </button>
-      <div class="flex flex-col items-center relative">
-        <div
-          class="bg-[#121716] w-[428px] h-[428px] absolute rounded-full absolute -top-[100px] z-0"
-        ></div>
-        <div
-          class="bg-[#121E1C] w-[356px] h-[356px] absolute rounded-full mt-[57px] absolute -top-[118px] z-0"
-        ></div>
-        <div
-          class="bg-[#11211E] w-[270px] h-[270px] absolute rounded-full mt-[57px] absolute -top-[79px] z-0"
-        ></div>
-        <div
-          class="bg-[#172E29] w-[156px] h-[156px] absolute rounded-full mt-[57px] absolute -top-[16px] z-0"
-        ></div>
-        <img
-          src="./assets/image 9.png"
-          alt="gem icon"
-          class="absolute top-[36px] z-10"
-        />
-        <p class="font-bold py-2 px-4 text-[24px] z-10 absolute top-[180px]">
-          GET MORE GEM
-        </p>
-      </div>
-      <div class="space-y-4 z-10 relative mt-[260px] slide-up">
-        <div>
-          <h2 class="text-lg font-semibold mb-2">Task list</h2>
-          <div
-            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between mb-2"
-            onclick="toggleModal('mainModal')"
-          >
-            <div class="flex items-center">
-              <img src="./assets/x.png" alt="youtube icon" class="mr-4" />
-              <div>
-                <p>Easy Cake daily news</p>
-                <div class="flex gap-1 items-center font-bold">
-                  <img src="./assets/gem.png" alt="" class="w-[22.22px] h-5" />
-                  <p class="text-yellow-500">+5.000</p>
-                </div>
-              </div>
-            </div>
-            <img src="./assets/arrow.png" alt="arrow icon" />
-          </div>
-          <div
-            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between mb-2"
-          >
-            <div class="flex items-center">
-              <img src="./assets/discord.png" alt="youtube icon" class="mr-4" />
-              <div>
-                <p>Easy Cake daily news</p>
-                <div class="flex gap-1 items-center font-bold">
-                  <img src="./assets/gem.png" alt="" class="w-[22.22px] h-5" />
-                  <p class="text-yellow-500">+5.000</p>
-                </div>
-              </div>
-            </div>
-            <img src="./assets/arrow.png" alt="check icon" />
-          </div>
-          <div
-            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between"
-          >
-            <div class="flex items-center">
-              <img src="./assets/tele.png" alt="youtube icon" class="mr-4" />
-              <div>
-                <p>Easy Cake daily news</p>
-                <div class="flex gap-1 items-center font-bold">
-                  <img src="./assets/gem.png" alt="" class="w-[22.22px] h-5" />
-                  <p class="text-yellow-500">+5.000</p>
-                </div>
-              </div>
-            </div>
-            <img src="./assets/arrow.png" alt="arrow icon" />
-          </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="min-h-screen overflow-hidden bg-gradient-to-l from-[rgba(0,0,0,1)] via-[#072727] to-[rgba(0,0,0,1)] text-white px-4 relative">
+    <button class="absolute top-0 bg-[rgba(217,217,217,0.3)] z-10 max-w-[116px] px-5 py-1 text-[14px] rounded-[10px] top-3 right-5">
+      Connect TON wallet
+    </button>
+    <div class="flex flex-col items-center relative">
+      <div class="bg-[rgba(34,205,202,0.02)] w-[428px] h-[428px] absolute rounded-full absolute -top-[100px] z-0"></div>
+      <div class="bg-[rgba(34,205,202,0.02)] w-[356px] h-[356px] absolute rounded-full mt-[57px] absolute -top-[118px] z-0"></div>
+      <div class="bg-[rgba(34,205,202,0.02)] w-[270px] h-[270px] absolute rounded-full mt-[57px] absolute -top-[79px] z-0"></div>
+      <div class="bg-[rgba(34,205,202,0.02)] w-[156px] h-[156px] absolute rounded-full mt-[57px] absolute -top-[16px] z-0"></div>
+      <img src="./assets/image 9.png" alt="gem icon" class="absolute top-[36px] z-10" />
+      <p class="font-bold py-2 px-4 text-[24px] z-10 absolute top-[190px]">AIRDROP TASK</p>
+      <P class="text-center z-10 absolute top-[250px] text-[13px]">Ngày listing đang đến. Nhiệm vụ sẽ xuất hiện bên dưới. Hoàn thành để tham gia Airdrop</P>
+    </div>
+    <div class="space-y-4 z-10 relative mt-[320px] slide-up">
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Task list</h2>
+        <div id="task-list">
+          <!-- Task list items will be inserted here by JavaScript -->
         </div>
-        <div>
-          <h2 class="text-lg font-semibold mb-2">Daily checkin</h2>
-          <div
-            class="bg-zinc-800 p-4 rounded-lg flex items-center justify-between"
-          >
-            <div class="flex items-center">
-              <img src="./assets/task.png" alt="checkin icon" class="mr-4" />
-              <div>
-                <p>Daily tasks list</p>
-                <div class="flex gap-1 items-center font-bold">
-                  <img src="./assets/gem.png" alt="" class="w-[22.22px] h-5" />
-                  <p class="text-yellow-500">+5.000.000</p>
-                </div>
-              </div>
-            </div>
-            <img src="./assets/arrow.png" alt="arrow icon" />
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex justify-around mt-4 fixed bottom-0 right-0 w-full bg-black h-[54px] items-center z-30"
-      >
-        <a
-          href="./index.html"
-          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
-        >
-          <img src="./assets/mine.png" alt="Mine icon" class="" />
-          <span class="text-xs">Mine</span>
-        </a>
-        <a
-          href="./friend.html"
-          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
-        >
-          <img src="./assets/friends.png" alt="Friends icon" />
-          <span class="text-xs">Friends</span>
-        </a>
-        <a
-          href="./earn.html"
-          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
-        >
-          <img src="./assets/earn.png" alt="Earn icon" />
-          <span class="text-xs">Earn</span>
-        </a>
-        <a
-          href="./upgrade.html"
-          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
-        >
-          <img src="./assets/upgrade.png" alt="Upgrade icon" />
-          <span class="text-xs">Upgrade</span>
-        </a>
-        <a
-          href="./airdrop.html"
-          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center bg-[#D9D9D920]"
-        >
-          <img src="./assets/airdrop-active.png" alt="Airdrop icon" />
-          <span class="text-xs text-[#FFFF22]">Airdrop</span>
-        </a>
       </div>
     </div>
-    <div
-      id="mainModal"
+    <div class="space-y-4 z-10 relative mt-4 slide-up">
+      <div onclick="toggleModal('checkinModal')">
+        <h2 class="text-lg font-semibold mb-2">Daily checkin</h2>
+        <div class="bg-[rgba(217,217,217,0.1)] px-4 py-3 rounded-lg flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="./assets/task.png" alt="checkin icon" class="mr-4" />
+            <div>
+              <p class="font-bold">Daily tasks list</p>
+              <div class="flex gap-1 items-center font-bold">
+                <img src="./assets/gem.png" alt="" class="w-[22.22px] h-5" />
+                <p class="text-yellow-500">+5.000.000</p>
+              </div>
+            </div>
+          </div>
+          <img src="./assets/arrow.png" alt="arrow icon" />
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-around mt-4 fixed bottom-0 right-0 w-full bg-black h-[54px] items-center z-30">
+      <a href="./index.html" class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center">
+        <img src="./assets/mine.png" alt="Mine icon" class="" />
+        <span class="text-xs">Mine</span>
+      </a>
+      <a href="./friend.html" class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center">
+        <img src="./assets/friends.png" alt="Friends icon" />
+        <span class="text-xs">Friends</span>
+      </a>
+      <a href="./earn.html" class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center">
+        <img src="./assets/earn.png" alt="Earn icon" />
+        <span class="text-xs">Earn</span>
+      </a>
+      <a href="./upgrade.html" class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center">
+        <img src="./assets/upgrade.png" alt="Upgrade icon" />
+        <span class="text-xs">Upgrade</span>
+      </a>
+      <a href="./airdrop.html" class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center bg-[#D9D9D920]">
+        <img src="./assets/airdrop-active.png" alt="Airdrop icon" />
+        <span class="text-xs text-[#FFFF22]">Airdrop</span>
+      </a>
+    </div>
+  </div>
+  <div id="modals-container">
+    <!-- Modals will be inserted here by JavaScript -->
+  </div>
+
+  <div
+      id="checkinModal"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-30 text-white hidden"
     >
       <div
@@ -177,39 +99,317 @@
         >
           <button
             class="absolute top-3 right-3 w-9 h-9 rounded-full bg-[rgba(217,217,217,0.1)] text-[#727272]"
-            onclick="toggleModal('mainModal')"
+            onclick="toggleModal('checkinModal')"
           >
             <i class="fa-solid fa-x"></i>
           </button>
           <div class="text-center mb-6">
             <img
-              src="./assets/x.png"
+              src="./assets/image 9 (1).png"
               alt="Gem Icon"
-              class="mx-auto mb-4 w-[68px] h-[68px]"
+              class="mx-auto mb-4"
             />
           </div>
           <div class="text-center mb-4">
-            <h3 class="text-lg font-semibold mb-7">Follow X channel</h3>
+            <h3 class="text-lg font-semibold">Daily Check-in</h3>
             <p class="text-muted-foreground mb-4">
-              <button
-              class="bg-[#36C3FF] text-black font-bold px-8 py-2 rounded-xl"
-            >
-              Follow X
-            </button>
-            <div class="flex justify-center items-center m-5 gap-2">
-              <img src="./assets/gem.png" alt="" class="w-[31.11px] h-7" />
-              <p class="text-[#FFFF22] font-bold">+5.000</p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+            <div class="grid grid-cols-3 gap-2">
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(54,195,255,0.5)] text-white rounded-[18px]"
+              >
+                <span>Day 1</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground border border-yellow-500 rounded-[18px]"
+              >
+                <span>Day 2</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 3</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 4</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 5</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 6</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 4</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 5</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 6</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 4</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 5</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 6</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 4</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 5</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 6</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 4</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 5</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center p-2 bg-[rgba(217,217,217,0.1)] text-card-foreground rounded-[18px]"
+              >
+                <span>Day 6</span>
+                <div class="flex justify-center items-center gap-1">
+                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <span class="font-bold text-[#FFFF22]">+5.000</span>
+                </div>
+              </div>
             </div>
-            <button
-              class="bg-[#36C3FF] text-black font-bold w-[80%] px-4 py-2 rounded-lg"
-            >
-              Check
+            <button class="absolute w-[80%] right-[10%] bottom-5 p-5 bg-[#36C3FF] text-[#0D0D0D] font-bold rounded-[18px]">
+              Check in
             </button>
           </div>
         </div>
       </div>
     </div>
+    <script src="./earn.js"></script>
 
-    <script src="./upgrade.js"></script>
-  </body>
+  <script>
+    // JSON array of tasklist
+    const tasks = [
+      {
+        id: "task1",
+        title: "Follow X channel",
+        task: "Follow X",
+        icon: "./assets/x.png",
+        reward: "+5.000",
+        rewardIcon: "./assets/gem.png",
+        status: false
+      },
+      {
+        id: "task2",
+        title: "Join Discord",
+        task: "Join Discord",
+        icon: "./assets/discord.png",
+        reward: "+5.000",
+        rewardIcon: "./assets/gem.png",
+        status: false
+      },
+      {
+        id: "task3",
+        title: "Join Telegram",
+        task: "Join Telegram",
+        icon: "./assets/tele.png",
+        reward: "+5.000",
+        rewardIcon: "./assets/gem.png",
+        status: true
+      }
+    ];
+
+    // Function to render tasklist items
+    function renderTasks() {
+      const taskList = document.getElementById('task-list');
+      const modalsContainer = document.getElementById('modals-container');
+      
+      tasks.forEach(task => {
+        // Create task item
+        const taskItem = document.createElement('div');
+        taskItem.classList.add('bg-[rgba(217,217,217,0.1)]', 'px-4', 'py-3', 'rounded-lg', 'flex', 'items-center', 'justify-between', 'mb-1');
+        taskItem.setAttribute('onclick', `toggleModal('${task.id}')`);
+
+        taskItem.innerHTML = `
+          <div class="flex items-center">
+            <img src="${task.icon}" alt="${task.title} icon" class="mr-4" />
+            <div>
+              <p class="font-bold">${task.title}</p>
+              <div class="flex gap-1 items-center font-bold">
+                <img src="${task.rewardIcon}" alt="" class="w-[22.22px] h-5" />
+                <p class="text-yellow-500">${task.reward}</p>
+              </div>
+            </div>
+          </div>
+          <img src="${task.status ? './assets/done.png' : './assets/arrow.png'}" alt="${task.status ? 'done icon' : 'arrow icon'}" class="status-icon" data-task-id="${task.id}" />
+        `;
+        
+        taskList.appendChild(taskItem);
+
+        // Create modal for the task
+        const taskModal = document.createElement('div');
+        taskModal.id = task.id;
+        taskModal.classList.add('fixed', 'inset-0', 'bg-black', 'bg-opacity-50', 'flex', 'items-end', 'justify-center', 'z-30', 'text-white', 'hidden');
+        taskModal.innerHTML = `
+          <div class="h-max-content relative z-30 pt-20 w-full slide-up">
+            <div class="bg-gradient-to-b from-[rgba(218,0,1,0)] via-[rgba(218,0,1,0.6)] to-[rgba(218,0,1,0)] shadow-lg h-64 w-full absolute top-0 z-10 pointer-events-none"></div>
+            <div class="bg-[rgba(218,0,1,0.6)] w-full h-20 absolute top-[78px] rounded-[30px] z-20"></div>
+            <div class="bg-black rounded-t-[30px] shadow-lg p-6 w-full z-40 relative">
+              <button class="absolute top-3 right-3 w-9 h-9 rounded-full bg-[rgba(217,217,217,0.1)] text-[#727272]" onclick="toggleModal('${task.id}')">
+                <i class="fa-solid fa-x"></i>
+              </button>
+              <div class="text-center mt-4 mb-6">
+                <img src="${task.icon}" alt="Gem Icon" class="mx-auto mb-4 w-[68px] h-[68px]" />
+              </div>
+              <div class="text-center mb-4">
+                <h3 class="text-[24px] text-[#D9D9D9] mb-6">${task.title}</h3>
+                <button class="bg-[#36C3FF] text-[#0D0D0D] font-bold px-8 py-4 rounded-[18px]" onclick="handleTaskClick">${task.task}</button>
+                <div class="flex justify-center items-center m-6 gap-2">
+                  <img src="./assets/gem.png" alt="" class="w-[31.11px] h-7" />
+                  <p class="text-[#FFFF22] font-bold text-[20px]">${task.reward}</p>
+                </div>
+                <button class="bg-[#36C3FF] text-[#0D0D0D] font-bold w-[80%] px-4 py-4 rounded-[18px]" onclick="handleTaskClick>Check</button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        modalsContainer.appendChild(taskModal);
+      });
+    }
+
+    // Function to toggle modal visibility
+    function toggleModal(taskId) {
+      const modal = document.getElementById(taskId);
+      modal.classList.toggle('hidden');
+    }
+
+    function handleTaskClick(event) {
+      const target = event.target;
+      if (target.classList.contains('status-icon')) {
+        const taskId = target.getAttribute('data-task-id');
+        const task = tasks.find(t => t.id === taskId);
+
+        if (task) {
+          // Toggle task status
+          task.status = !task.status;
+
+          // Re-render tasks to update the status icon
+          renderTasks();
+
+          // Hide the modal
+          toggleModal('checkinModal');
+        }
+      }
+    }
+
+    // Render the tasks when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTasks();
+      document.getElementById('task-list').addEventListener('click', handleTaskClick);
+    });
+  </script>
+</body>
 </html>
