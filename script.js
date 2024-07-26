@@ -11,15 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const cake = document.getElementById("cake");
   const cakeImage = document.querySelector(".cake-image");
 
-  function handleTap(e) {
-    e.preventDefault(); // Prevent default behavior (optional)
-
+  function handleTap(x, y) {
     // Floating number animation
     var number = document.createElement("div");
     number.className = "floating-number";
     number.innerText = "+1";
-    number.style.left = e.pageX + "px";
-    number.style.top = e.pageY + "px";
+    number.style.left = x + "px";
+    number.style.top = y + "px";
     document.body.appendChild(number);
     setTimeout(function () {
       number.remove();
@@ -60,13 +58,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add touchstart listener for multi-touch
   cake.addEventListener("touchstart", function (e) {
     for (let i = 0; i < e.touches.length; i++) {
-      handleTap(e.touches[i]);
+      const touch = e.touches[i];
+      handleTap(touch.pageX, touch.pageY);
     }
   });
 
   // Add click listener for mouse clicks
   cake.addEventListener("click", function (e) {
-    handleTap(e);
+    handleTap(e.pageX, e.pageY);
   });
 
   updateUI();
