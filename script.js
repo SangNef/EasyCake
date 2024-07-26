@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const cake = document.getElementById("cake");
   const cakeImage = document.querySelector(".cake-image");
 
-  cake.addEventListener("click", function (e) {
+  function handleTap(e) {
+    e.preventDefault(); // Prevent default behavior (optional)
+
     // Floating number animation
     var number = document.createElement("div");
     number.className = "floating-number";
@@ -45,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       updateUI();
     }
-  });
+  }
 
   function updateUI() {
     totalGemsElement.innerText = totalGems;
@@ -54,6 +56,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const progressPercentage = (totalGems / gemsToLevelUp) * 100;
     progressBar.style.width = `${progressPercentage}%`;
   }
+
+  // Add touchstart listener for multi-touch
+  cake.addEventListener("touchstart", function (e) {
+    for (let i = 0; i < e.touches.length; i++) {
+      handleTap(e.touches[i]);
+    }
+  });
+
+  // Add click listener for mouse clicks
+  cake.addEventListener("click", function (e) {
+    handleTap(e);
+  });
 
   updateUI();
 });
