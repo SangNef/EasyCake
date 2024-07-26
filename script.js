@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const cakeImage = document.querySelector(".cake-image");
 
   function handleTap(x, y) {
-    // Floating number animation
     var number = document.createElement("div");
     number.className = "floating-number";
     number.innerText = "+1";
@@ -21,15 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(number);
     setTimeout(function () {
       number.remove();
-    }, 1000); // Time to remove the number from the DOM after animation ends
+    }, 1000);
 
-    // Cake image tilt effect
     cakeImage.classList.add("tilt");
 
-    // Reset the tilt effect after animation
     setTimeout(() => {
       cakeImage.classList.remove("tilt");
-    }, 300); // Match the duration of the CSS transition
+    }, 300);
 
     // Update UI
     if (energy >= 1) {
@@ -39,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (totalGems >= gemsToLevelUp) {
         if (level < maxLevel) {
           level++;
-          totalGems = 0; // Reset gems
+          totalGems = 0; 
         }
       }
 
@@ -55,15 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
     progressBar.style.width = `${progressPercentage}%`;
   }
 
-  // Add touchstart listener for multi-touch
   cake.addEventListener("touchstart", function (e) {
-    for (let i = 0; i < e.touches.length; i++) {
-      const touch = e.touches[i];
+    e.preventDefault();
+
+    for (let i = 0; i < e.changedTouches.length; i++) {
+      const touch = e.changedTouches[i];
       handleTap(touch.pageX, touch.pageY);
     }
   });
 
-  // Add click listener for mouse clicks
   cake.addEventListener("click", function (e) {
     handleTap(e.pageX, e.pageY);
   });
