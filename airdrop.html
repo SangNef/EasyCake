@@ -1,91 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-  <link rel="stylesheet" href="./style.css" />
-</head>
-<body class="bg-gradient-to-l from-[rgba(0,0,0,1)] via-[#072727] to-[rgba(0,0,0,1)] w-full">
-  <div class="text-white px-4 relative overflow-hidden">
-    <button class="absolute top-0 bg-[rgba(217,217,217,0.3)] z-10 px-5 py-1 text-[14px] rounded-[10px] top-3 right-5">
-      Connect TON wallet
-    </button>
-    <div class="flex flex-col items-center relative">
-      <div class="bg-[rgba(34,205,202,0.02)] w-[428px] h-[428px] absolute rounded-full absolute -top-[100px] z-0"></div>
-      <div class="bg-[rgba(34,205,202,0.02)] w-[356px] h-[356px] absolute rounded-full mt-[57px] absolute -top-[118px] z-0"></div>
-      <div class="bg-[rgba(34,205,202,0.02)] w-[270px] h-[270px] absolute rounded-full mt-[57px] absolute -top-[79px] z-0"></div>
-      <div class="bg-[rgba(34,205,202,0.02)] w-[156px] h-[156px] absolute rounded-full mt-[57px] absolute -top-[16px] z-0"></div>
-      <img src="./assets/image 9.png" alt="gem icon" class="absolute top-[36px] z-10" />
-      <p class="font-bold py-2 px-4 text-[24px] z-10 absolute top-[190px]">AIRDROP TASK</p>
-      <P class="text-center z-10 absolute top-[250px] text-[13px]">Ngày listing đang đến. Nhiệm vụ sẽ xuất hiện bên dưới. Hoàn thành để tham gia Airdrop</P>
-    </div>
-    <div class="space-y-4 z-10 relative mt-[320px] slide-up">
-      <div>
-        <h2 class="text-lg font-semibold mb-2">Task list</h2>
-        <div id="task-list">
-          <!-- Task list items will be inserted here by JavaScript -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body
+    class="bg-black w-full"
+  >
+    <div class="text-white px-4 relative overflow-hidden bg-gradient-to-l from-[rgba(0,0,0,1)] via-[#072727] to-[rgba(0,0,0,1)]">
+      <button
+        class="absolute top-0 bg-[rgba(217,217,217,0.3)] z-10 px-5 py-1 text-[14px] rounded-[10px] top-3 right-5"
+      >
+        Connect TON wallet
+      </button>
+      <div class="flex flex-col items-center relative">
+        <div
+          class="bg-[rgba(34,205,202,0.02)] w-[428px] h-[428px] absolute rounded-full absolute -top-[100px] z-0"
+        ></div>
+        <div
+          class="bg-[rgba(34,205,202,0.02)] w-[356px] h-[356px] absolute rounded-full mt-[57px] absolute -top-[118px] z-0"
+        ></div>
+        <div
+          class="bg-[rgba(34,205,202,0.02)] w-[270px] h-[270px] absolute rounded-full mt-[57px] absolute -top-[79px] z-0"
+        ></div>
+        <div
+          class="bg-[rgba(34,205,202,0.02)] w-[156px] h-[156px] absolute rounded-full mt-[57px] absolute -top-[16px] z-0"
+        ></div>
+        <img
+          src="./assets/image 9.png"
+          alt="gem icon"
+          class="absolute top-[36px] z-10"
+        />
+        <p class="font-bold py-2 px-4 text-[24px] z-10 absolute top-[190px]">
+          AIRDROP TASK
+        </p>
+        <p class="text-center z-10 absolute top-[250px] text-[13px]">
+          Ngày listing đang đến. Nhiệm vụ sẽ xuất hiện bên dưới. Hoàn thành để
+          tham gia Airdrop
+        </p>
+      </div>
+      <div class="space-y-4 z-10 relative mt-[320px] slide-up">
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Task list</h2>
+          <div id="task-list">
+            <!-- Task list items will be inserted here by JavaScript -->
+          </div>
         </div>
       </div>
-    </div>
-    <div class="space-y-4 z-10 relative mt-4 slide-up pb-16">
-      <div onclick="toggleModal('checkinModal')">
-        <h2 class="text-lg font-semibold mb-2">Daily checkin</h2>
-        <div class="bg-[rgba(217,217,217,0.1)] px-4 py-3 rounded-lg flex items-center justify-between">
-          <div class="flex items-center">
-            <img src="./assets/task.png" alt="checkin icon" class="mr-4" />
-            <div>
-              <p class="font-bold">Daily tasks list</p>
-              <div class="flex gap-1 items-center font-bold">
-                <img src="./assets/gem.png" alt="" class="w-[22.22px] h-5" />
-                <p class="text-yellow-500">+5.000.000</p>
+      <div class="space-y-4 z-10 relative mt-4 slide-up pb-16">
+        <div onclick="toggleModal('checkinModal')">
+          <h2 class="text-lg font-semibold mb-2">Daily checkin</h2>
+          <div
+            class="bg-[rgba(217,217,217,0.1)] px-4 py-3 rounded-lg flex items-center justify-between"
+          >
+            <div class="flex items-center">
+              <img src="./assets/task.png" alt="checkin icon" class="mr-4" />
+              <div>
+                <p class="font-bold">Daily tasks list</p>
+                <div class="flex gap-1 items-center font-bold">
+                  <img src="./assets/gem.png" alt="" class="w-[22.22px] h-5" />
+                  <p class="text-yellow-500">+5.000.000</p>
+                </div>
               </div>
             </div>
+            <img src="./assets/arrow.png" alt="arrow icon" />
           </div>
-          <img src="./assets/arrow.png" alt="arrow icon" />
         </div>
       </div>
+      <div
+        class="flex justify-around mt-4 fixed bottom-0 right-0 w-full bg-black h-[54px] items-center z-30"
+      >
+        <a
+          href="./index.html"
+          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+        >
+          <img src="./assets/mine.png" alt="Mine icon" class="" />
+          <span class="text-xs">Mine</span>
+        </a>
+        <a
+          href="./friend.html"
+          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+        >
+          <img src="./assets/friends.png" alt="Friends icon" />
+          <span class="text-xs">Friends</span>
+        </a>
+        <a
+          href="./earn.html"
+          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+        >
+          <img src="./assets/earn.png" alt="Earn icon" />
+          <span class="text-xs">Earn</span>
+        </a>
+        <a
+          href="./upgrade.html"
+          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center"
+        >
+          <img src="./assets/upgrade.png" alt="Upgrade icon" />
+          <span class="text-xs">Upgrade</span>
+        </a>
+        <a
+          href="./airdrop.html"
+          class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center bg-[#D9D9D920]"
+        >
+          <img src="./assets/airdrop-active.png" alt="Airdrop icon" />
+          <span class="text-xs text-[#FFFF22]">Airdrop</span>
+        </a>
+      </div>
     </div>
-    <div class="flex justify-around mt-4 fixed bottom-0 right-0 w-full bg-black h-[54px] items-center z-30">
-      <a href="./index.html" class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center">
-        <img src="./assets/mine.png" alt="Mine icon" class="" />
-        <span class="text-xs">Mine</span>
-      </a>
-      <a href="./friend.html" class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center">
-        <img src="./assets/friends.png" alt="Friends icon" />
-        <span class="text-xs">Friends</span>
-      </a>
-      <a href="./earn.html" class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center">
-        <img src="./assets/earn.png" alt="Earn icon" />
-        <span class="text-xs">Earn</span>
-      </a>
-      <a href="./upgrade.html" class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center">
-        <img src="./assets/upgrade.png" alt="Upgrade icon" />
-        <span class="text-xs">Upgrade</span>
-      </a>
-      <a href="./airdrop.html" class="flex flex-col items-center text-muted-foreground w-[64px] h-[46px] rounded-lg justify-center bg-[#D9D9D920]">
-        <img src="./assets/airdrop-active.png" alt="Airdrop icon" />
-        <span class="text-xs text-[#FFFF22]">Airdrop</span>
-      </a>
+    <div id="modals-container">
+      <!-- Modals will be inserted here by JavaScript -->
     </div>
-  </div>
-  <div id="modals-container">
-    <!-- Modals will be inserted here by JavaScript -->
-  </div>
 
-  <div
+    <div
       id="checkinModal"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-30 text-white hidden"
     >
       <div
-        class="h-max-content relative z-30 pt-20 w-full slide-up"
+        class="relative z-30 pt-20 w-full slide-up"
         id="slide-up"
       >
         <div
@@ -95,7 +135,7 @@
           class="bg-[rgba(218,0,1,0.6)] w-full h-20 absolute top-[78px] rounded-[30px] z-20"
         ></div>
         <div
-          class="bg-black rounded-t-[30px] shadow-lg p-6 w-full z-40 relative"
+          class="bg-black rounded-t-[30px] shadow-lg p-6 w-full z-40 relative max-h-[80vh] overflow-scroll"
         >
           <button
             class="absolute top-3 right-3 w-9 h-9 rounded-full bg-[rgba(217,217,217,0.1)] text-[#727272]"
@@ -122,7 +162,11 @@
               >
                 <span>Day 1</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -131,7 +175,11 @@
               >
                 <span>Day 2</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -140,7 +188,11 @@
               >
                 <span>Day 3</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -149,7 +201,11 @@
               >
                 <span>Day 4</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -158,7 +214,11 @@
               >
                 <span>Day 5</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -167,7 +227,11 @@
               >
                 <span>Day 6</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -176,7 +240,11 @@
               >
                 <span>Day 4</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -185,7 +253,11 @@
               >
                 <span>Day 5</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -194,7 +266,11 @@
               >
                 <span>Day 6</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -203,7 +279,11 @@
               >
                 <span>Day 4</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -212,7 +292,11 @@
               >
                 <span>Day 5</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -221,7 +305,11 @@
               >
                 <span>Day 6</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -230,7 +318,11 @@
               >
                 <span>Day 4</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -239,7 +331,11 @@
               >
                 <span>Day 5</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -248,7 +344,11 @@
               >
                 <span>Day 6</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -257,7 +357,11 @@
               >
                 <span>Day 4</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -266,7 +370,11 @@
               >
                 <span>Day 5</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
@@ -275,12 +383,18 @@
               >
                 <span>Day 6</span>
                 <div class="flex justify-center items-center gap-1">
-                  <img src="./assets/gem.png" alt="gem icon" class="my-1 w-[22.22px] h-5" />
+                  <img
+                    src="./assets/gem.png"
+                    alt="gem icon"
+                    class="my-1 w-[22.22px] h-5"
+                  />
                   <span class="font-bold text-[#FFFF22]">+5.000</span>
                 </div>
               </div>
             </div>
-            <button class="absolute w-[80%] right-[10%] bottom-5 p-5 bg-[#36C3FF] text-[#0D0D0D] font-bold rounded-[18px]">
+            <button
+              class="fixed w-[80%] right-[10%] bottom-5 p-5 bg-[#36C3FF] text-[#0D0D0D] font-bold rounded-[18px]"
+            >
               Check in
             </button>
           </div>
@@ -289,50 +403,59 @@
     </div>
     <script src="./earn.js"></script>
 
-  <script>
-    // JSON array of tasklist
-    const tasks = [
-      {
-        id: "task1",
-        title: "Follow X channel",
-        task: "Follow X",
-        icon: "./assets/x.png",
-        reward: "+5.000",
-        rewardIcon: "./assets/gem.png",
-        status: false
-      },
-      {
-        id: "task2",
-        title: "Join Discord",
-        task: "Join Discord",
-        icon: "./assets/discord.png",
-        reward: "+5.000",
-        rewardIcon: "./assets/gem.png",
-        status: false
-      },
-      {
-        id: "task3",
-        title: "Join Telegram",
-        task: "Join Telegram",
-        icon: "./assets/tele.png",
-        reward: "+5.000",
-        rewardIcon: "./assets/gem.png",
-        status: true
-      }
-    ];
+    <script>
+      // JSON array of tasklist
+      const tasks = [
+        {
+          id: "task1",
+          title: "Follow X channel",
+          task: "Follow X",
+          icon: "./assets/x.png",
+          reward: "+5.000",
+          rewardIcon: "./assets/gem.png",
+          status: false,
+        },
+        {
+          id: "task2",
+          title: "Join Discord",
+          task: "Join Discord",
+          icon: "./assets/discord.png",
+          reward: "+5.000",
+          rewardIcon: "./assets/gem.png",
+          status: false,
+        },
+        {
+          id: "task3",
+          title: "Join Telegram",
+          task: "Join Telegram",
+          icon: "./assets/tele.png",
+          reward: "+5.000",
+          rewardIcon: "./assets/gem.png",
+          status: true,
+        },
+      ];
 
-    // Function to render tasklist items
-    function renderTasks() {
-      const taskList = document.getElementById('task-list');
-      const modalsContainer = document.getElementById('modals-container');
-      
-      tasks.forEach(task => {
-        // Create task item
-        const taskItem = document.createElement('div');
-        taskItem.classList.add('bg-[rgba(217,217,217,0.1)]', 'px-4', 'py-3', 'rounded-lg', 'flex', 'items-center', 'justify-between', 'mb-1');
-        taskItem.setAttribute('onclick', `toggleModal('${task.id}')`);
+      // Function to render tasklist items
+      function renderTasks() {
+        const taskList = document.getElementById("task-list");
+        const modalsContainer = document.getElementById("modals-container");
 
-        taskItem.innerHTML = `
+        tasks.forEach((task) => {
+          // Create task item
+          const taskItem = document.createElement("div");
+          taskItem.classList.add(
+            "bg-[rgba(217,217,217,0.1)]",
+            "px-4",
+            "py-3",
+            "rounded-lg",
+            "flex",
+            "items-center",
+            "justify-between",
+            "mb-1"
+          );
+          taskItem.setAttribute("onclick", `toggleModal('${task.id}')`);
+
+          taskItem.innerHTML = `
           <div class="flex items-center">
             <img src="${task.icon}" alt="${task.title} icon" class="mr-4" />
             <div>
@@ -343,16 +466,31 @@
               </div>
             </div>
           </div>
-          <img src="${task.status ? './assets/done.png' : './assets/arrow.png'}" alt="${task.status ? 'done icon' : 'arrow icon'}" class="status-icon" data-task-id="${task.id}" />
+          <img src="${
+            task.status ? "./assets/done.png" : "./assets/arrow.png"
+          }" alt="${
+            task.status ? "done icon" : "arrow icon"
+          }" class="status-icon" data-task-id="${task.id}" />
         `;
-        
-        taskList.appendChild(taskItem);
 
-        // Create modal for the task
-        const taskModal = document.createElement('div');
-        taskModal.id = task.id;
-        taskModal.classList.add('fixed', 'inset-0', 'bg-black', 'bg-opacity-50', 'flex', 'items-end', 'justify-center', 'z-30', 'text-white', 'hidden');
-        taskModal.innerHTML = `
+          taskList.appendChild(taskItem);
+
+          // Create modal for the task
+          const taskModal = document.createElement("div");
+          taskModal.id = task.id;
+          taskModal.classList.add(
+            "fixed",
+            "inset-0",
+            "bg-black",
+            "bg-opacity-50",
+            "flex",
+            "items-end",
+            "justify-center",
+            "z-30",
+            "text-white",
+            "hidden"
+          );
+          taskModal.innerHTML = `
           <div class="h-max-content relative z-30 pt-20 w-full slide-up">
             <div class="bg-gradient-to-b from-[rgba(218,0,1,0)] via-[rgba(218,0,1,0.6)] to-[rgba(218,0,1,0)] shadow-lg h-64 w-full absolute top-0 z-10 pointer-events-none"></div>
             <div class="bg-[rgba(218,0,1,0.6)] w-full h-20 absolute top-[78px] rounded-[30px] z-20"></div>
@@ -376,40 +514,42 @@
           </div>
         `;
 
-        modalsContainer.appendChild(taskModal);
-      });
-    }
+          modalsContainer.appendChild(taskModal);
+        });
+      }
 
-    // Function to toggle modal visibility
-    function toggleModal(taskId) {
-      const modal = document.getElementById(taskId);
-      modal.classList.toggle('hidden');
-    }
+      // Function to toggle modal visibility
+      function toggleModal(taskId) {
+        const modal = document.getElementById(taskId);
+        modal.classList.toggle("hidden");
+      }
 
-    function handleTaskClick(event) {
-      const target = event.target;
-      if (target.classList.contains('status-icon')) {
-        const taskId = target.getAttribute('data-task-id');
-        const task = tasks.find(t => t.id === taskId);
+      function handleTaskClick(event) {
+        const target = event.target;
+        if (target.classList.contains("status-icon")) {
+          const taskId = target.getAttribute("data-task-id");
+          const task = tasks.find((t) => t.id === taskId);
 
-        if (task) {
-          // Toggle task status
-          task.status = !task.status;
+          if (task) {
+            // Toggle task status
+            task.status = !task.status;
 
-          // Re-render tasks to update the status icon
-          renderTasks();
+            // Re-render tasks to update the status icon
+            renderTasks();
 
-          // Hide the modal
-          toggleModal('checkinModal');
+            // Hide the modal
+            toggleModal("checkinModal");
+          }
         }
       }
-    }
 
-    // Render the tasks when the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      renderTasks();
-      document.getElementById('task-list').addEventListener('click', handleTaskClick);
-    });
-  </script>
-</body>
+      // Render the tasks when the DOM is fully loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        renderTasks();
+        document
+          .getElementById("task-list")
+          .addEventListener("click", handleTaskClick);
+      });
+    </script>
+  </body>
 </html>
